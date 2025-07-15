@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            background: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        .entry {
+            background: #eee;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            text-align: left;
+            position: relative;
+        }
+        .delete {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>My Journal</h2>
+        <textarea id="entryText" placeholder="Write your journal entry..."></textarea>
+        <button onclick="addEntry()">Save Entry</button>
+        <div id="entries"></div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", loadEntries);
+        function addEntry() {
+            let text = document.getElementById("entryText").value;
+            if (text.trim() === "") return;
+            let entries = JSON.parse(localStorage.getItem("journalEntries")) || [];
+            entries.push(text);
+            localStorage.setItem("journalEntries", JSON.stringify(entries));
+            document.getElementById("entryText").value = "";
+            loadEntries();
+        }
+        function loadEntries() {
+            let entries = JSON.parse(localStorage.getItem("journalEntries")) || [];
+            let entryContainer = document.getElementById("entries");
+            entryContainer.innerHTML = "";
+            entries.forEach((entry, index) => {
+                let div = document.createElement("div");
+                div.classList.add("entry");
+                div.innerHTML = `${entry} <button class='delete' onclick='deleteEntry(${index})'>X</button>`;
+                entryContainer.appendChild(div);
+            });
+        }
+        function deleteEntry(index) {
+            let entries = JSON.parse(localStorage.getItem("journalEntries")) || [];
+            entries.splice(index, 1);
+            localStorage.setItem("journalEntries", JSON.stringify(entries));
+            loadEntries();
+        }
+    </script>
+</body>
+</html>

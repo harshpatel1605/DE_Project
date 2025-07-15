@@ -1,0 +1,270 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400);
+
+html, body {
+    height: 100%;
+    background: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+.wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#button {
+    min-width: 200px;
+    min-height: 200px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #1D1D1D;
+    background: #fff;
+    background: linear-gradient(180deg, #00FFE1, #1E9ADC);
+    border: none;
+    border-radius: 100%;
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+}
+button::before {
+    content: '';
+    border-radius: 1000px;
+    min-width: calc(200px + 15px);
+    min-height: calc(200px + 15px);
+    border: 6px solid #00FFE1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+}
+#button:hover, #button:focus {
+    color: #313133;
+    transform: translateY(-10px);
+}
+button:hover::before, button:focus::before {
+    opacity: 1;
+}
+button::after {
+    content: '';
+    width: 30px; 
+    height: 30px;
+    border-radius: 100%;
+    border: 6px solid #00FFE1;
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 2s infinite;
+}
+button:hover::after, button:focus::after {
+    animation: none;
+    display: none;
+}
+h3{
+    font-family: 'Montserrat', arial, sans-serif;
+    color: #1D1D1D;
+    margin-top: 20px;
+    font-weight: 800;
+}
+#covid h3, #Mental h3{
+    margin-left: 50px;
+}
+.answer{
+    width: 225px;
+    height: 25px;
+    padding: 5px;
+    background-color: transparent;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    border: 2px solid #000000;;
+    border-radius: 100px;
+    color: #1D1D1D;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+#q{
+    width:80%;
+    border-radius: 30px;
+    background: linear-gradient(to right, #f12711, #f5af19);
+    padding: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%
+}
+#nxt{
+    width: 70px;
+    height: 35px;
+    margin-left: 5px;
+    background: linear-gradient( #00FFE1, #1E9ADC);
+    border: none;
+    border-radius: 10px;
+}
+#nxt:focus{
+    transform: scale(0.85);
+    transition: all 0.3s ease-in-out;
+}
+#checks{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+}
+label{
+    font-size: 18px;
+    font-family: 'Montserrat', arial, sans-serif;
+    font-weight: 800;
+    color: #1D1D1D;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #d1d3d1;
+    margin-right: 5px;
+}
+#result{
+    color: #000;
+    font-family: 'Montserrat', arial, sans-serif;;
+    width: 100%;
+    height: 80%;
+    margin-top: 5%;
+    border-radius: 20px;
+    padding: 5px;
+    text-align: center;
+}
+#general{
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 4px solid #000000;
+}
+#bmi{
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 4px solid #000000;
+}
+#covid{
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 4px solid #000000;
+}
+#Mental{
+    width: 100%;
+    background-color: #fff;
+}
+h1{
+    font-family: 'Montserrat', arial, sans-serif;
+}
+.head{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    border-bottom: 4px solid #000000;
+}
+#general #q{
+    text-align: center;
+}
+#bmi #q{
+    text-align: center;
+}
+.button-sub {
+    opacity: 1;
+    outline: 0;
+    color: #fff;
+    line-height: 40px;
+    position: relative;
+    text-align: center;
+    letter-spacing: 1px;
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Montserrat', arial, sans-serif;
+    text-transform: uppercase;
+    margin-left: 50px;
+    border-radius: 10px;
+}
+.button-sub:hover:after {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+}
+.button-sub:hover:before {
+    opacity: 0;
+    transform: translateY(50%) rotateX(90deg);
+}
+.button-sub:after {
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    color: #FFFFFF;
+    display: block;
+    transition: 0.5s;
+    position: absolute;
+    background: #77BD42;
+    content: attr(data-back);
+    transform: translateY(-50%) rotateX(90deg);
+}
+.button-sub:before {
+    top: 0;
+    left: 0;
+    opacity: 1;
+    color: #FFFFFF;
+    display: block;
+    padding: 0 30px;
+    line-height: 40px;
+    transition: 0.5s;
+    position: relative;
+    background: #FC2161;
+    content: attr(data-front);
+    transform: translateY(0) rotateX(0);
+}
+@keyframes ring {
+    0% {
+        width: 215px;
+        height: 215px;
+        opacity: 1;
+    }
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width:723px) {
+    #q{
+        width:90%;
+        border-radius: 0;
+        background: none;
+        padding: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    #covid h3{
+        margin-left: 5px;
+    }
+    #Mental h3{
+        margin-left: 5px;
+    }
+    #covid-chart{
+        display: none;
+    }
+    #depression-chart{
+        display: none;
+    }
+    #result{
+        width: 100%;
+        font-size: 8px;
+    }
+}

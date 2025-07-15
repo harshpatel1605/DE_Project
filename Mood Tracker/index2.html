@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Heally</title>
+</head>
+<body>
+
+  <div id="result">
+    <div id="covid-chart"></div>
+    <div id="depression-chart"></div> 
+
+
+    <div id="Name"></div>
+    <div id="Age"></div>  
+    <div id="report">
+      <div id="covid-report"></div>
+      <div id="covid-suggestion"></div>
+    </div>
+    <div id="report">
+      <div id="depression-report"></div>
+      <div id="depression-suggestion"></div>
+    </div>
+    
+    <div id="bmi">Your BMI is:</div>
+    <div id="bmi-report">You are </div>
+
+  </div>
+  <div id="questions" class="ques">
+    <div id="general">
+      <div class="head">
+      <h1>GENERAL INFORMATION</h1>
+    </div>
+      <div id="q"  >
+        <h3>1. What is your Name?* </h3>
+        <input type="text" id="name" class="answer"/>
+      </div>
+
+      <div id="q"  >
+        <h3>2. What is your Age?* </h3>
+        <input type="text" id="age" class="answer"/>
+        
+      </div>
+  </div>
+  <div id="bmi">
+    <div class="head">
+      <h1>BODY MASS INDEX </h1>
+    </div>
+      <div id="q"  >
+        <h3>3. What is your Weight?* </h3>
+        <p style="color:#000;">**Weight is measured in KG**</p>
+        <input type="text" id="weight" class="answer"/>    
+      </div>
+    
+      <div id="q"  >
+        <h3>4. What is your Height?* </h3>
+        <p style="color:#000;">**Height is measured in Feets**</p>
+        <input type="text" id="height" class="answer"/>
+    </div>
+  </div>
+  <div id="covid">
+    <div class="head">
+    <h1>Sickness INFORMATION</h1>
+  </div>
+    <div id="q"  >
+      <h3>5. Are you facing the following Issues? </h3>
+      <div id="checks" > 
+        <label for="d-1"><input type="checkbox" class="radio-5" name="d-1">Cough</label>
+        
+        <label for="d-2"><input type="checkbox" class="radio-5" name="d-2">Fever</label>
+                
+        <label for="d-3"><input type="checkbox" class="radio-5" name="d-3">Sore Throat</label>
+                
+        <label for="d-4"><input type="checkbox" class="radio-5" name="d-4">Chest Congestion or runny nose</label>
+        
+        <label for="d-5"><input type="checkbox" class="radio-5" name="d-5">Body Ache</label>
+        
+        <label for="d-6"><input type="checkbox" class="radio-5" name="d-6">Difficulty in Breathing</label> 
+        
+        <label for="d-7"><input type="checkbox" class="radio-5" name="d-7">Loss of Taste and Smell</label> 
+       
+        <label for="d-8"><input type="checkbox" class="radio-5" name="d-8">Pink Eyes</label>  
+
+        <label for="d-9"><input type="checkbox" class="radio-5" name="d-9">Hearing Imapairment</label>  
+
+        <label for="d-10"><input type="checkbox" class="radio-5" name="d-10">Gastrointestinal Symtoms</label>  
+   
+      </div>    
+    </div>
+  </div>
+  <div id="Mental">
+    <div class="head">
+    <h1>STRESS INFORMATION</h1>
+    </div>
+    <div id="q">
+      <h3>6. Do you feel little interest in doing things?*</h3>
+      <div id="checks">
+        <label for="d" class="check1"><input type="checkbox"  class="check1" name="d">Yes</label>
+        
+        <label for="d" class="check1"><input type="checkbox"  class="check2" name="d">No</label> 
+      </div>
+    </div>
+
+    <div id="q">
+      <h3>7. Do you Feel down, depressed, or hopeless?*</h3>
+      <div id="checks">
+        <label for="d" class="check2"><input type="checkbox"  class="check1" name="d">Yes</label>
+        
+        <label for="d" class="check2"><input type="checkbox"  class="check2" name="d">No</label> 
+      </div>
+    </div>
+
+    <div id="q">
+      <h3>8. Are you troubling to fall or stay asleep, or sleeping too much? *</h3>
+      <div id="checks">
+        <label for="d" class="check3"><input type="checkbox"  class="check1" name="d">Yes</label>
+        
+        <label for="d" class="check3"><input type="checkbox"  class="check2" name="d">No</label> 
+      </div>
+    </div>
+
+    <div id="q">
+      <h3>9. Do you feel tired or having little energy?*</h3>
+      <div id="checks">
+        <label for="d" class="check4"><input type="checkbox"  class="check1" name="d">Yes</label>
+        
+        <label for="d" class="check4"><input type="checkbox"  class="check2" name="d">No</label> 
+      </div>
+    </div>
+
+    <div id="q">
+      <h3>10. Are you having poor appetite or overeating?*</h3>
+      <div id="checks">
+        <label for="d" class="check5"><input type="checkbox"  class="check1" name="d">Yes</label>
+        
+        <label for="d" class="check5"><input type="checkbox"  class="check2" name="d">No</label> 
+      </div>
+    </div>
+
+    <div id="q">
+      <h3>11. Are you feeling bad about yourself?*</h3>
+      <div id="checks">
+        <label for="d" class="check6"><input type="checkbox"  class="check1" name="d">Yes</label>
+        
+        <label for="d" class="check6"><input type="checkbox"  class="check2" name="d">No</label> 
+      </div>
+    </div>
+
+    <div id="q">
+      <h3>12. Are you getting trouble concentrating on things?*</h3>
+      <div id="checks">
+        <label for="d" class="check7"><input type="checkbox"  class="check1" name="d">Yes</label>
+        
+        <label for="d" class="check7"><input type="checkbox"  class="check2" name="d">No</label> 
+      </div>
+    </div>
+
+    <div id="q">
+      <h3>13. Are you moving or speaking so slowly that other people could have noticed?*</h3>
+      <div id="checks">
+        <label for="d" class="check8"><input type="checkbox"  class="check1" name="d">Yes</label>
+        
+        <label for="d" class="check8"><input type="checkbox"  class="check2" name="d">No</label> 
+      </div>
+    </div>
+
+    <div id="q">
+      <h3>14. Do you get thoughts that you would be better off dead, or of hurting yourself?*</h3>
+      <div id="checks">
+        <label for="d" class="check9"><input type="checkbox"  class="check1" name="d">Yes</label>
+        
+        <label for="d" class="check9"><input type="checkbox"  class="check2" name="d">No</label> 
+      </div>
+    </div>
+
+    <div id="q">
+      <h3>15. Are these problems distracting you for your aim?*</h3>
+      <div id="checks">
+        <label for="d" class="check10"><input type="checkbox"  class="check1" name="d">Yes</label>
+        
+        <label for="d" class="check10"><input type="checkbox"  class="check2" name="d">No</label> 
+      </div>
+    </div>
+  </div>
+    <a onclick="calculate()" class="button-sub" data-back="Click" data-front="Submit"></a>
+</div>
+
+  <div class="wrap">
+    <button id="button" onclick="start()">Start</button>
+  </div>
+
+  <script src="main.js"></script>
+
+</body>
+</html>
